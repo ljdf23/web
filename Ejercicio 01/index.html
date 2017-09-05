@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 	<!--Incluir bootstrap-->
-	<link rel="stylesheet" href="css/bootstrap.min.cs">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 
 	<!--Angujar JS-->
 	<script type="text/javascript" src="js/lib/angular.min.js"></script>
@@ -38,6 +38,69 @@
 			<br>
 			Filtro de número: {{ 1350000 | number}}
 		</p>
+		<hr>
+
+		<h1>ng-model</h1>
+		<h4>en angularjs</h4>
+		<hr>
+		<p>
+			Su nombre: {{ nombre | uppercase }}
+			<br>
+			<input type="text" ng-model="nombre" name="form-control" placeholder="Ingrese su nombre">	
+		</p>
+
+		<p>
+		Seleccione el pais : {{ pais }}
+			<select class="form-control" ng-model="pais">
+				<option value="1">Costa Rica</option>
+				<option value="2">México</option>
+				<option value="3">Colombia</option>
+			</select>
+		</p>
+
+		<p>
+			Seleccione lsa opciones que desea: {{ opt1 }} {{ opt2 }}
+			<br>
+			<input type="checkbox" ng-model="opt1"> Opción 1
+			<br>
+			<input type="checkbox" ng-model="opt2"> Opción 2
+		</p>
+
+		<p>
+			Selecciones el genero: {{ genero }}
+			<br>
+			<input type="radio" value="M" ng-model="genero"> Masculino
+			<br>
+			<input type="radio" value="F" ng-model="genero"> Femenino
+		</p>
+
+		<hr>
+
+		<h2>Evaluación</h2>
+		<h4>Angular 101</h4>
+
+			<p>
+				Nombre Completo:
+				<br>
+					<input type="text" ng-model="nombre_completo" name="form-control" placeholder="Ingrese el nombre completo" autofocus>
+			</p>
+			<p>
+				Lugar de trabajo:
+				<br>
+					<input type="text" ng-model="lugar_de_trabajo" name="form-control" placeholder="Ingrese el lugar de trabajo">
+			 </p>
+			 <p>
+				Salario en Dólares:
+				<br>
+					<input type="text" ng-model="salario" name="form-control" placeholder="Ingrese el salario">
+			</p>
+			<hr>
+
+			Nombre: {{ nombre_completo | uppercase }} <br>
+			Lugar de trabajo: {{ lugar_de_trabajo }} <br>
+			Salario: {{ salario | currency }}
+		</p>
+
 	</div>
 
 </body>
