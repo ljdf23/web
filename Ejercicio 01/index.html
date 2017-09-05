@@ -14,7 +14,32 @@
 	<div class="container">
 		
 		<h1>{{ "Hola Mundo desde angujarjs" }}</h1>
+		<h1>Filtros :: Filters</h1>
+		<hr>
+
+		<p>
+			Filtro de texto : {{ "Fernand0"}}
+			<br>
+			Filtro de texto: {{"Fernand0" | uppercase }}
+			<br>
+			Filtro de texto: {{"Fernand0" | lowercase }}
+		</p>
+
+		<p>
+			Filtro de moneda: {{1250}}
+			<br>
+			Filtro de moneda: {{1250 | currency}}
+			<br>
+			Filtro de moneda: {{1250 | currency:'L.' }}
+		</p>
+
+		<p>
+			Filtro de número: {{ 1350000 }}
+			<br>
+			Filtro de número: {{ 1350000 | number}}
+		</p>
 	</div>
+
 </body>
 
 </html>
