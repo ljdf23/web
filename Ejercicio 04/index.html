@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="universidadApp">
+<html ng-app="universidadApp"><
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Filtros - ng-repeat</title>
@@ -20,6 +20,10 @@
             .avatar{
                 width: 45px;
                 height: 45px;
+            }
+
+            .puntero {
+                cursor: pointer;
             }
 
         </style>
@@ -45,19 +49,20 @@
                     <option value="mujer">Mujeres</option>
                     <option value="hombre">Hombres</option>
                 </select>
-
+                <br>
             </div>
             
             <table class="table table-striped">
                 <tr>
                     <th>Avatar</th>
-                    <th>Nombre</th>
-                    <th>Sexo</th>
+                    <th><a class="puntero" ng-click="columna='nombre'; reverse = !reverse;">Nombre</a></th>
+                    <th><a class="puntero" ng-click="columna='sexo'; reverse = !reverse;">Sexo</a></th>
                     <th>Teléfono</th>
                     <th>Celular</th>
                 </tr>
 
-                <tr ng-repeat="persona in personas | filter:busqueda">
+               <!--<tr ng-repeat="persona in personas | filter:busqueda | orderBy:'nombre':reverse">  <!--filtro y orden-->
+               <tr ng-repeat="persona in personas | filter:busqueda | orderBy:columna:reverse">   <!--Multiples filtros indicando la columna que se dio clic-->
                     <td><img ng-src="img/{{ persona.avatar}}" class="avatar img-circle"></td>
                     <td>{{ persona.nombre }}</td>
                     <td>{{persona.sexo}}</td>
