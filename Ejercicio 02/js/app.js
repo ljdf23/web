@@ -9,19 +9,22 @@ app.controller('profesorCtrl', function ($scope) {
 	/*this.profesor = profesorData; /*delcaramos una propiedad profesor que se iguala a un objeto, propiedad del controlador*/
 	$scope.profesor = profesorData;
 	$scope.editando = {};
+	$scope.mostrarCaja = false;
+
 
 	$scope.EditarProfesor = function() {
-
 		angular.copy( $scope.profesor , $scope.editando);   /*copiamos de un objeto a otro*/
+		$scope.mostrarCaja = true;
 	}
 
 	$scope.GuardarCambios = function() {
-
 		angular.copy( $scope.editando, $scope.profesor);   /*copiamos de un objeto a otro*/
+		$scope.mostrarCaja = false;
 	}
 
 	$scope.CancelarCambios = function() {
 		$scope.editando = {};
+		$scope.mostrarCaja = false;
 	}
 })
 
