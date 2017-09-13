@@ -1,0 +1,26 @@
+<h1>Alumnos</h1>
+<h4>Listado de alumnos en el sistema</h4> 
+
+<hr>
+
+
+ <div class="row" >
+ 	
+ 	<table class="table table-striped">
+ 		<tr><th>Codigo</th>
+ 			<th>Nombre</th>
+ 			<th>Teléfono</th>
+ 		</tr>
+
+ 		<tr ng-repeat="alumno in alumnos | limitTo:posicion | limitTo:-3">
+ 			<td>{{alumno.codigo}}</td>
+ 			<td>{{alumno.nombre}}</td>
+ 			<td>{{alumno.telefono | telefono}}</td>
+ 		</tr>
+ 	</table>
+
+ 	<br>
+
+ 	<button class="btn btn-primary">Anteriores</button>
+ 	<button class="btn btn-primary">Siguientes</button>
+ </div>
