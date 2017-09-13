@@ -6,6 +6,13 @@ var app = angular.module('universidadApp',[ ]);
 
 app.controller('listadoCtrl', ['$scope', function($scope){
 
+  $scope .items = [
+                    {name: 'one', age: 30},
+                    {name: 'two', age: 40},
+                    {name: 'three', age: 50},
+                  ]
+
+  $scope.itemsArray = ["hola","adios"]
 
   $scope.paisSeleccionado = "ARE";
 
