@@ -8,7 +8,7 @@ app.controller('profesoresCtrl', ['$scope', function($scope){
 	$scope.personas = ["Carlos","Pedro","Maria","Susana","Melissa","Fernando","Hernando","Juan","Camila","Ubaldina","Jocelyn","Arlette","Dilcia","Andrea","Antonio","Jose","Alberto"];
 
 
-	$scope.siguientes = function(){
+	$scope.siguientes = function() {
 
 		if ( $scope.inicio < $scope.personas.length  ) {
 			$scope.inicio += 5;

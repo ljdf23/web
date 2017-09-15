@@ -10,17 +10,19 @@
  		<tr><th>Codigo</th>
  			<th>Nombre</th>
  			<th>Teléfono</th>
+ 			<th>Ver</th>
  		</tr>
 
- 		<tr ng-repeat="alumno in alumnos | limitTo:posicion | limitTo:-3">
+ 		<tr ng-repeat="alumno in alumnos | limitTo:posicion | limitTo: -3 " > 
  			<td>{{alumno.codigo}}</td>
  			<td>{{alumno.nombre}}</td>
  			<td>{{alumno.telefono | telefono}}</td>
+ 			<td><a href="#/alumno/{{ alumno.codigo }}">Ver registro</a></td>
  		</tr>
  	</table>
 
  	<br>
 
- 	<button class="btn btn-primary">Anteriores</button>
- 	<button class="btn btn-primary">Siguientes</button>
+ 	<button class="btn btn-primary" ng-click="anteriores()">Anteriores</button>
+ 	<button class="btn btn-primary" ng-click="siguientes()">Siguientes</button> {{ posicion }}
  </div>

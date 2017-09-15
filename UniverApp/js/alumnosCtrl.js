@@ -10,4 +10,19 @@ app.controller('alumnosCtrl', ['$scope','$http', function($scope,$http){
 		$scope.alumnos = data;		
 	});
 
+	$scope.siguientes = function(){
+
+		if ($scope.alumnos.length > $scope.posicion) {
+			$scope.posicion += 3;
+		}
+	}
+
+
+	$scope.anteriores = function(){
+
+		if ($scope.alumnos.length > 3) {
+			$scope.posicion -= 3;
+		}
+	}
+
 }]);
