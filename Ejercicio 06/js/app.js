@@ -14,8 +14,13 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
 
 		//seteamos el objeto//
   		$scope.profesores = data.profesores;
+
   })
- 
+
+
+  
+
+
 
 }]);
 

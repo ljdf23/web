@@ -6,8 +6,13 @@ app.controller('alumnosCtrl', ['$scope','$http', function($scope,$http){
 	$scope.posicion = 3;
 
 	$http.get('php/servicios/alumnos.listado.php').success(function(data){
-		
+		console.log('success');
 		$scope.alumnos = data;		
+	}).error(function(data, status) {
+	  console.error('Repos error', status, data);
+	})
+	.finally(function() {
+	  console.log("finally finished repos");
 	});
 
 	$scope.siguientes = function(){
